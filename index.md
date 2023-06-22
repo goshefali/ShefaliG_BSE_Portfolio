@@ -8,7 +8,7 @@
 
 
 <!--![Headstone Image](Shefali-Headshot.png)-->
-<img src="[Shefali-Headshot.png](https://github.com/goshefali/ShefaliG_BSE_Portfolio/blob/gh-pages/Shefali-Headshot.png)" width="250" height="300">
+<img src="https://github.com/goshefali/ShefaliG_BSE_Portfolio/blob/gh-pages/Shefali-Headshot.png" width="250" height="300">
   
 <!--Final Milestone
 For your final milestone, explain the outcome of your project. Key details to include are:

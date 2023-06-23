@@ -7,7 +7,7 @@
 
 
 
-<!--- ![Headstone Image](Shefali-Headshot.png) -->
+<!--![Headstone Image](Shefali-Headshot.png)-->
 <img src="https://github.com/goshefali/ShefaliG_BSE_Portfolio/blob/gh-pages/Shefali-Headshot.png" width="250" height="300">
   
 <!--- Final Milestone

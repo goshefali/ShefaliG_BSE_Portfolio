@@ -7,8 +7,7 @@
 
 
 
-<!--![Headstone Image](Shefali-Headshot.png)-->
-<img src="https://raw.githubusercontent.com/goshefali/ShefaliG_BSE_Portfolio/gh-pages/Shefali-Headshot.png" width="250" height="300">
+![Headstone Image](Shefali-Headshot Small.jpeg)
   
 <!--- Final Milestone
 For your final milestone, explain the outcome of your project. Key details to include are:

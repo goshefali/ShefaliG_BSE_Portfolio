@@ -18,20 +18,27 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <!--- Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share - Embed, and copy and paste the code to replace what's below.-->
 
-<!--- Second Milestone
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
+# Second Milestone
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wdxHAdDdhls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<!--- For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
 - Technical details of what you've accomplished and how they contribute to the final goal
 - What has been surprising about the project so far
 - Previous challenges you faced that you overcame
 - What needs to be completed before your final milestone -->
 
-<!--- Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share - Embed, and copy and paste the code to replace what's below. -->
+In this milestone, I connected my accelerometer to the Arduino, set up the Bluetooth module, and attached all the parts to the knee sleeve.
+
+First, I wired the MPU-6050 accelerometer and gyroscope with the Arduino. The VCC pins and GND pins are connected to 5V and ground, respectively, and the SCL and SDA pins of the accelerometer are connected to the SCL and SDA pins of the Arduino. I found code online that allowed me to print out all the six values that the module measures. These values are acceleration in the X, Y, and Z axes and rotational velocity along the X, Y, and Z axes. I struggled with interpreting the values, but I was able to understand the significance of each by seeing how they changed when the module was moved. This will allow me to determine proper and improper knee movements in the next milestone.
+
+My next step was to connect the Bluetooth module to the Arduino and the laptop to allow wireless viewing of sensor data. The VCC and GND pins are connected to 5V and ground, the TX pin of the Bluetooth module is connected to the RX pin (pin 0) of the Arduino, and the RX pin is connected to the TX pin (pin 1) of the Arduino. No code is necessarily needed to use the module. After connecting the Arduino to power, the module should appear in the list of Bluetooth devices for a Mac laptop. I entered the password "1234", selected the port of the module in the Arduino application, and was able to view messages in the serial monitor and plotter without physically attaching the USB! At first, I thought that an Android phone was required for connection, but a laptop will do the same job. Online instructions utilize the Bluetooth module in different ways, so it required research to find the instructions suitable for my purposes. 
 
 # First Milestone
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rf7adFBhlLM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-My first step was to create my own bend sensor by attaching a piece of velostat (pressure-resistance material) in between two pieces of neoprene (fabric) sewed with conductive thread to create a pressure sensor. The more pressure was applied to the sensor, the lower the resistance became. However, the range of resistance changed often, so calibrating the resistance to match the bend angle was too time-consuming. Because of this, I changed the sensor to a flex sensor where its resistance increases as it bends.
+My first step was to create my own bend sensor by attaching a piece of velostat (pressure-resistance material) in between two pieces of neoprene (fabric) sewn with conductive thread to create a pressure sensor. The more pressure was applied to the sensor, the lower the resistance became. However, the range of resistance changed often, so calibrating the resistance to match the bend angle was too time-consuming. Because of this, I changed the sensor to a flex sensor where its resistance increases as it bends.
 To measure the resistance of the bend sensor, I created a circuit with a static resistor and the flex sensor, which is a variable resistor. By measuring the voltage between a known resistance and the unknown resistance, I was able to find the resistance of the flex sensor.
 Next, I translated the amount of resistance to the angle of bend of the resistor. I recorded how the resistance varied when bending, and I was able to determine how much change in the resistance correlated with the bend of the sensor. This step was relatively simple due to how the resistance remained stable and consistent when compared to the sensor that I previously made. 
 My next step was to add a buzzer to go off when the bend of the resistor went past a certain angle. After doing some research, it seems like the bend of the knee should not go past 90, so I set my buzzer to alert the user of that. However, I am planning to do more research on the proper form of the knee to adjust my program.

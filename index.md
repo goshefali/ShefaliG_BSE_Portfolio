@@ -10,8 +10,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 - What you've accomplished since your previous milestone
 - What your biggest challenges and triumphs were at BSE
 - A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE 
--->
+- What you hope to learn in the future after everything you've learned at BSE -->
 
 # Second Milestone
 
@@ -24,7 +23,7 @@ First, I wired the MPU-6050 accelerometer and gyroscope with the Arduino. The VC
 My next step was to connect the Bluetooth module to the Arduino and the laptop to allow wireless viewing of sensor data. The VCC and GND pins are connected to 5V and ground, the TX pin of the Bluetooth module is connected to the RX pin (pin 0) of the Arduino, and the RX pin is connected to the TX pin (pin 1) of the Arduino. No code is necessarily needed to use the module. After connecting the Arduino to power, the module should appear in the list of Bluetooth devices for a Mac laptop. I entered the password "1234", selected the port of the module in the Arduino application, and was able to view messages in the serial monitor and plotter without physically attaching the USB! At first, I thought that an Android phone was required for connection, but a laptop will do the same job. Online instructions utilize the Bluetooth module in different ways, so it required research to find the instructions suitable for my purposes. 
 
 
-![Headstone Image](Shefali-Headshot-Small.jpeg)
+![Headstone Image](Shefali-Headshot Small.jpeg)
   
 
 # First Milestone

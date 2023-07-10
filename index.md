@@ -5,13 +5,6 @@
 |:--:|:--:|:--:|:--:|
 | Shefali G | Lynbrook High School | Electrical Engineering | Rising Junior
 
- <!--- Final Milestone
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE -->
-
 ![Headstone Image](Shefali-Headshot Small.jpeg)
 
 # Second Milestone

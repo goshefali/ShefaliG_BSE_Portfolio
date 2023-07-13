@@ -6,7 +6,7 @@ My project is a knee brace that uses sensors to track the user's movements and a
 |:--:|:--:|:--:|:--:|
 | Shefali G | Lynbrook High School | Electrical Engineering | Rising Junior
 
-![Headstone Image](Shefali-Headshot Small.jpeg)
+![Headstone Image](Shefali-Project.png)
 
 # Third Milestone
 

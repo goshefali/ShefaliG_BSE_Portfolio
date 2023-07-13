@@ -8,6 +8,24 @@ My project is a knee brace that uses sensors to track the user's movements and a
 
 ![Headstone Image](Shefali-Headshot Small.jpeg)
 
+# Third Milestone
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WzPNAynZCQo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+The final part of my project was to program the Arduino to distinguish between good and bad squat forms. My first step was to learn what mistakes I should be looking for while squatting. After searching on the internet, I decided to focus on detecting when the user's knees were bending inwards and when the user squatted down instead of backward. These increase force on the knee, which is unsafe. 
+
+Next, I formatted my code to print out accelerometer values in a way that would be easy to convert into a spreadsheet- brackets around every six values and commas in between each value (x acceleration, y acceleration, z acceleration, x rotational velocity, y rotational velocity, z rotational velocity). Once printed onto the serial monitor, I found a Python program that would automatically format the data into a spreadsheet (.xlsx file) in a way that would be easy to graph. This step required me to learn how to work with Python in the terminal to install libraries and use proper syntaxes for Python code. The version of syntax for the program depends on the version of the Python interpreter (the program that executes the code line-by-line). 
+
+Once able to graph the values using both a spreadsheet and through the Arduino IDE Serial Plotter, I looked for ways that the values varied based on different forms. I performed squats with correct form, with knees bending inwards, and bending down without bending back. After graphing the data, I was able to notice the patterns for each form. 
+
+After this, I added code to my Arduino program to print out a statement for each state. Since the Arduino IDE uses C++, I needed to learn more about the language in order to do this. So, I learned how to create functions, arrays, and for-loops, as well as syntaxes specific to C++. For example, arguments in C++ are passed by the value inside the variable. To change the value of the variable, I had to pass by reference (the location in memory) by adding an '&' after the variable's data type. I mostly used the Y acceleration value to distinguish the forms because it varied the most and was clearly different for each motion.
+
+After this, my knee brace printed “good form”, “knee bending inwards”, “bend backward, not down”, or “no activity detected” to the serial monitor. When the bad form is detected, the buzzer beeps.
+
+The challenges that I faced during this milestone were using the Bluetooth module, calibrating the sensor, and attempting to use a Serial-to-TCP library to publish data to a web server. Although my Bluetooth module worked well in the first part of my project, it began having connectivity issues. I attempted to fix the issues by consulting online forums, trying a new Arduino board and Bluetooth module, and changing the layout of my circuit. Eventually, it began working again when I gave it time to reconnect upon initially disconnecting. I was also challenged during identifying patterns in my accelerometer data. The patterns were not clear at first, and it required many tests for the distinctions between forms to become obvious to me. Lastly, the Serial-to-TCP connection was completely new to me, and I struggled to find the correct order of steps. It required me to run a gateway protocol on my computer, then connect the Arduino through a serial connection to be able to publish data with HTTP or MQTT. However, this only worked when the Arduino was connected to the computer with a serial cable, and not over Bluetooth serial connection. 
+
+My main takeaway from Bluestamp is that even if I don't know something at first, I can learn it along the way. I learned to learn on my own. Previously, I was often reluctant to start something new because I believed I wouldn't know how to go about it. Now, I realize that even if I don't know now, I can definitely learn. The internet is full of resources, and my experience at Bluestamp has taught me how to find them. I felt the most pride when I solved a difficult problem with the resources available to me. After Bluestamp, I want to keep building devices and circuits with new components and concepts and keep learning along the way. I've become so excited to see what I have the ablitity to build! 
+
 # Second Milestone
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wdxHAdDdhls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -29,9 +47,11 @@ Now that all the components are attached to the knee sleeve, I can calibrate the
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rf7adFBhlLM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 My first step was to create my bend sensor by attaching a piece of velostat (pressure-resistance material) in between two pieces of neoprene (fabric) sewn with conductive thread to create a pressure sensor. The more pressure was applied to the sensor, the lower the resistance became. However, the range of resistance changed often, so calibrating the resistance to match the bend angle was too time-consuming. Because of this, I changed the sensor to a flex sensor where its resistance increases as it bends.
+
 To measure the resistance of the bend sensor, I created a circuit with a static resistor and the flex sensor, which is a variable resistor. By measuring the voltage between a known resistance and the unknown resistance, I was able to find the resistance of the flex sensor.
 Next, I translated the amount of resistance to the angle of bend of the resistor. I recorded how the resistance varied when bending, and I was able to determine how much change in the resistance correlated with the bend of the sensor. This step was relatively simple due to how the resistance remained stable and consistent when compared to the sensor that I previously made. 
 My next step was to add a buzzer to go off when the bend of the resistor went past a certain angle. After doing some research, it seems like the bend of the knee should not go past 90, so I set my buzzer to alert the user of that. However, I am planning to do more research on the proper form of the knee to adjust my program.
+
 I also was able to send information to the Arduino from a smartphone using a Bluetooth module, but I am planning to expand on this with my next milestone.
 My next steps will be connecting the Arduino with a smartphone or computer through a Bluetooth module to send information and learning how to integrate an accelerometer into the circuit.
 I am planning to try to calibrate my self-made bend sensor again at the end of the project.

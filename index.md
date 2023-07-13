@@ -24,7 +24,117 @@ After this, my knee brace printed “good form”, “knee bending inwards”, �
 
 The challenges that I faced during this milestone were using the Bluetooth module, calibrating the sensor, and attempting to use a Serial-to-TCP library to publish data to a web server. Although my Bluetooth module worked well in the first part of my project, it began having connectivity issues. I attempted to fix the issues by consulting online forums, trying a new Arduino board and Bluetooth module, and changing the layout of my circuit. Eventually, it began working again when I gave it time to reconnect upon initially disconnecting. I was also challenged during identifying patterns in my accelerometer data. The patterns were not clear at first, and it required many tests for the distinctions between forms to become obvious to me. Lastly, the Serial-to-TCP connection was completely new to me, and I struggled to find the correct order of steps. It required me to run a gateway protocol on my computer, then connect the Arduino through a serial connection to be able to publish data with HTTP or MQTT. However, this only worked when the Arduino was connected to the computer with a serial cable, and not over Bluetooth serial connection. 
 
-My main takeaway from Bluestamp is that even if I don't know something at first, I can learn it along the way. I learned to learn on my own. Previously, I was often reluctant to start something new because I believed I wouldn't know how to go about it. Now, I realize that even if I don't know now, I can definitely learn. The internet is full of resources, and my experience at Bluestamp has taught me how to find them. I felt the most pride when I solved a difficult problem with the resources available to me. After Bluestamp, I want to keep building devices and circuits with new components and concepts and keep learning along the way. I've become so excited to see what I have the ablitity to build! 
+My main takeaway from Bluestamp is that even if I don't know something at first, I can learn it along the way. I learned to learn on my own. Previously, I was often reluctant to start something new because I believed I wouldn't know how to go about it. Now, I realize that even if I don't know now, I can definitely learn. The internet is full of resources, and my experience at Bluestamp has taught me how to find them. I felt the most pride when I solved a difficult problem with the resources available to me. After Bluestamp, I want to keep building devices and circuits with new components and concepts and keep learning along the way. I've become so excited to see what I have the ability to build! 
+
+**Milestone 3 Code**
+
+```c++
+//Reference: https://lastminuteengineers.com/mpu6050-accel-gyro-arduino-tutorial/
+//works better with 115200 baud but also works with 9600 
+//for bluetooth module
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+#include <Wire.h>
+const int buzzer = 9; //buzzer to arduino pin 9
+
+double accelX;
+double accelY;
+double accelZ;
+double rotateX;
+double rotateY;
+double rotateZ;
+double temp;
+
+float accelYRecord [10];
+float accelZRecord [10];
+
+String currentStatus = "";
+
+Adafruit_MPU6050 mpu;
+
+void setup(void) {
+  Serial.begin(9600);
+  pinMode(buzzer, OUTPUT); // Set buzzer - pin 9 as an output
+
+  // Try to initialize!
+  if (!mpu.begin()) {
+    //Serial.println("Failed to find MPU6050 chip");
+    while (1) {
+      delay(10);
+    }
+  }
+
+  // set accelerometer range to +-8G
+  mpu.setAccelerometerRange(MPU6050_RANGE_8_G);
+
+  // set gyro range to +- 500 deg/s
+  mpu.setGyroRange(MPU6050_RANGE_500_DEG);
+
+  // set filter bandwidth to 21 Hz
+  mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
+
+  delay(100);
+}
+
+void evalForm (float arrY[], float arrZ[], String& stat){
+  sensors_event_t a, g, temp;
+  mpu.getEvent(&a, &g, &temp);
+  for (int i = 0; i < 10; i++) {
+        // Append sensor value to the array
+        arrY[i] = a.acceleration.y;
+        arrZ[i] = a.acceleration.z;
+        delay(500);
+  }
+  
+  float maxY = arrY[0];
+  float maxZ = arrZ[0];
+
+  for (int i = 0; i < 10; i++) {
+        // Append sensor value to the array
+        if (arrY[i]>maxY){
+          maxY = arrY[i];
+        }
+        if (arrY[i]>maxY){
+          maxY = arrY[i];
+        }
+  }
+
+ if(maxY>2.5){
+  stat = "Good form!";
+ }
+ else if(maxY<1.5){
+  stat = "Knee bending inwards";
+ }
+ else if(maxY<2.5){
+  stat = "Bend backwards, not just down";
+ }
+}
+
+void loop() {
+  /* Get new sensor events with the readings */
+  sensors_event_t a, g, temp;
+  mpu.getEvent(&a, &g, &temp);
+
+  if((a.acceleration.z>0.0) && (a.acceleration.y>0.0)){
+    evalForm(accelYRecord, accelZRecord, currentStatus);
+    Serial.println(currentStatus);
+    if((currentStatus == "Knee bending inwards")||(currentStatus == "Bend backwards, not just down")){
+      tone(buzzer, 1000); // Send 1KHz sound signal...
+    }
+    else if (currentStatus == "Good form!"){
+      noTone(buzzer);
+    }
+    Serial.println("");
+  }
+  else{
+    Serial.println("No activity detected");
+    Serial.println("");
+    noTone(buzzer);     // Stop sound...
+    delay(500);
+  }
+  delay(500);
+}
+```
 
 # Second Milestone
 

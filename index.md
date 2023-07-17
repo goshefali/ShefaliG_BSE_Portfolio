@@ -150,7 +150,9 @@ After connecting the accelerometer and Bluetooth module, I soldered the componen
 
 Now that all the components are attached to the knee sleeve, I can calibrate the flex sensor and accelerometer with actual values from the knee bending. Additionally, I will continue working on a dashboard. 
   
-![Headstone Image](bse_milestone2.jpeg)
+**Milestone 2 Schematic**
+
+![Headstone Image](bse_milestone2.png)
 
 # First Milestone
 

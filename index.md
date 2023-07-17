@@ -1,12 +1,12 @@
 # Knee Rehab and Activity Monitor with Bluetooth
 
-My project is a knee brace that uses sensors to track the user's movements and alerts them of incorrect form when doing exercise that could impact their knee. This knee brace specifically monitors squats by using an accelerometer and flex sensor that measures the angle of bend, acceleration, and angular velocity  of the knee. The brace will send data to the user's laptop for the user to view information about their knee. 
+My project is a knee brace that uses sensors to track the user's movements and alerts them of incorrect form when doing exercise that could impact their knee. More specifically, when the user is doing squats, the brace should alert the user if their knee bends inwards through a buzzer and through data sent to their computer. This knee brace specifically monitors squats by using an accelerometer and flex sensor that measures the angle of bend, acceleration, and angular velocity  of the knee. The brace will send data to the user's laptop through Bluetooth for the user to view information about their knee. 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Shefali G | Lynbrook High School | Electrical Engineering | Rising Junior
 
-![Headstone Image](Shefali-Project Small.png)
+![Headstone Image](Shefali-Project.png)
 
 # Third Milestone
 
@@ -188,8 +188,6 @@ void setup() {
 
 
 # Bill of Materials
-Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
-Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs.
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
@@ -221,6 +219,18 @@ Don't forget to place the link of where to buy each component inside the quotati
 |:--:|:--:|:--:|:--:|
 | 100 Ohm Resistor | Regulating voltage to buzzer | $0.55 | <a href="https://www.amazon.com/EDGELEC-Resistor-Tolerance-Multiple-Resistance/dp/B07QKDSCSM/ref=sr_1_2_sspa?crid=1UNXWP9K5DL4&keywords=100+resistor&qid=1689572707&sprefix=100+resistor%2Caps%2C187&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"> Link </a> |
 |:--:|:--:|:--:|:--:|
+
+# References
+Here are the websites where I learned to use the components and code needed for this project:
+
+https://lastminuteengineers.com/flex-sensor-arduino-tutorial/
+https://www.instructables.com/How-to-Connect-HC-05-to-Windows-1011-Mac-Apple-Com/
+http://www.ardumotive.com/how-to-use-a-buzzer-en.html
+https://lastminuteengineers.com/mpu6050-accel-gyro-arduino-tutorial/
+https://github.com/RoanBrand/ArduinoSerialToTCPBridgeClient
+https://www.circuitbasics.com/arduino-ohm-meter/
+https://www.youtube.com/watch?v=FkltX97YO4Y
+
 
 <!--Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.

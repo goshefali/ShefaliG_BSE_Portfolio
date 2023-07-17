@@ -225,13 +225,13 @@ void setup() {
 # References
 Here are the websites where I learned to use the components and code needed for this project:
 
-https://lastminuteengineers.com/flex-sensor-arduino-tutorial/
-https://www.instructables.com/How-to-Connect-HC-05-to-Windows-1011-Mac-Apple-Com/
-http://www.ardumotive.com/how-to-use-a-buzzer-en.html
-https://lastminuteengineers.com/mpu6050-accel-gyro-arduino-tutorial/
-https://github.com/RoanBrand/ArduinoSerialToTCPBridgeClient
-https://www.circuitbasics.com/arduino-ohm-meter/
-https://www.youtube.com/watch?v=FkltX97YO4Y
+https://lastminuteengineers.com/flex-sensor-arduino-tutorial/ \n
+https://www.instructables.com/How-to-Connect-HC-05-to-Windows-1011-Mac-Apple-Com/ \n
+http://www.ardumotive.com/how-to-use-a-buzzer-en.html \n
+https://lastminuteengineers.com/mpu6050-accel-gyro-arduino-tutorial/ \n
+https://github.com/RoanBrand/ArduinoSerialToTCPBridgeClient \n
+https://www.circuitbasics.com/arduino-ohm-meter/ \n
+https://www.youtube.com/watch?v=FkltX97YO4Y \n
 
 
 <!--Other Resources/Examples

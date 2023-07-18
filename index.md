@@ -136,6 +136,7 @@ void loop() {
 }
 ```
 **Graph of Accelerometer values**
+
 ![Headstone Image](chart (2).png)
 
 # Second Milestone

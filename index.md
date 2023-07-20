@@ -10,6 +10,8 @@ My project is a knee brace that uses sensors to track the user's movements and a
 
 # Final Milestone (Modifications)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tl0-EfI8nqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 My addition to the working knee brace is a web dashboard. This dashboard uses the Adafruit IO website that automatically formats data that it receives from the Arduino based on the widgets I added. The data is sent using the MQTT protocol.
 
 The first step of this modification was to find a way to create a TCP/IP connection. Since the connection between the HC-05 module and laptop is a serial connection, there needed to be a TCP/IP connection created over the serial connection. Luckily, I found a library for the Arduino that would create the connection. This was the Arduino TCP over Serial Client library (https://github.com/RoanBrand/ArduinoSerialToTCPBridgeClient).

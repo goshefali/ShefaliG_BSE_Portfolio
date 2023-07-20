@@ -8,6 +8,26 @@ My project is a knee brace that uses sensors to track the user's movements and a
 
 ![Headstone Image](Shefali-Project Small.png)
 
+# Final Milestone (Modifications)
+
+My addition to the working knee brace is a web dashboard. This dashboard uses the Adafruit IO website that automatically formats data that it receives from the Arduino based on the widgets I added. The data is sent using the MQTT protocol.
+
+The first step of this modification was to find a way to create a TCP/IP connection. Since the connection between the HC-05 module and laptop is a serial connection, there needed to be a TCP/IP connection created over the serial connection. Luckily, I found a library for the Arduino that would create the connection. This was the Arduino TCP over Serial Client library (https://github.com/RoanBrand/ArduinoSerialToTCPBridgeClient).
+
+This library requires a gateway protocol to be run at the same time as the serial connection, so I downloaded it and changed the serial port to the port of my Bluetooth module. (https://github.com/RoanBrand/SerialToTCPBridgeProtocol)
+
+Next, I configured my Bluetooth module to be able to work with the connection. Using AT mode (Attention mode), I was able to change the settings of the module. I set the default baud rate of the module to 115200 bits/second and reversed the polarity of the module. Once these steps were completed, I uploaded the library example code to the Arduino and modified it to connect to the adafruit.io server. After this, the Arduino uploaded basic test data to an Adafruit feed while the gateway protocol was running on my computer (through the terminal).
+
+Now, I needed to publish my accelerometer data and status to the feed. I combined my accelerometer code and publishing code in my first attempt at this. However, I ran into two main problems. First, the methods of the MQTT publishing library only took char pointers and integers as arguments to publish. To accommodate this, I converted my float integer values into strings, and then into the char array. The other problem was that there were conflicting libraries in the accelerometer library and the Serial-to-TCP library (HardwareSerial vs. NeoHWSerial). This was hard to identify, but once I did, I commented out the instances of the conflicting library in the source code of the accelerometer library. These fixes allowed my code to successfully compile!
+
+To display feed data in a dashboard, I used the adafruit.io website. I sent data to separate feeds and created a dashboard that formatted each based on widgets that I added. There is one issue with the way that the server works that reduces the precision of my program. The Adafruit IO website only allows 30 data points to be sent per minute for a free account. Since I have three different values to send (Y acceleration, Z acceleration, and current status), I can only publish every six seconds. That means my code only reads data every six seconds. Because of this, I lost the accuracy from when it was outputted to the serial monitor/plotter, and it is difficult to differentiate between "knee bending inwards" and "bend backward, not just down".
+
+My next steps will be to find a way to publish my data in a way that keeps the code running quickly, as well as continue making my knee brace more reliable and consistent.
+
+# Demo Night Presentation
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qDN0AT_V9gY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 # Third Milestone
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WzPNAynZCQo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

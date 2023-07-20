@@ -24,6 +24,10 @@ To display feed data in a dashboard, I used the adafruit.io website. I sent data
 
 My next steps will be to find a way to publish my data in a way that keeps the code running quickly, as well as continue making my knee brace more reliable and consistent.
 
+**Dashboard**
+
+![Headstone Image](dashboard.png)
+
 # Demo Night Presentation
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qDN0AT_V9gY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

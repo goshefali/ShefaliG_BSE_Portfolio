@@ -8,15 +8,20 @@ My project is a knee brace that uses sensors to track the user's movements and a
 
 ![Headstone Image](Shefali-Project Small.png)
 
+# Demo Night Presentation
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qDN0AT_V9gY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
 # Final Milestone (Modifications)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tl0-EfI8nqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 My addition to the working knee brace is a web dashboard. This dashboard uses the Adafruit IO website that automatically formats data that it receives from the Arduino based on the widgets I added. The data is sent using the MQTT protocol.
 
-The first step of this modification was to find a way to create a TCP/IP connection. Since the connection between the HC-05 module and laptop is a serial connection, there needed to be a TCP/IP connection created over the serial connection. Luckily, I found a library for the Arduino that would create the connection. This was the Arduino TCP over Serial Client library (https://github.com/RoanBrand/ArduinoSerialToTCPBridgeClient).
+The first step of this modification was to find a way to create a TCP/IP connection. Since the connection between the HC-05 module and laptop is a serial connection, there needed to be a TCP/IP connection created over the serial connection. Luckily, I found a library for the Arduino that would create the connection. This was the Arduino TCP over Serial Client library <a href="https://github.com/RoanBrand/ArduinoSerialToTCPBridgeClient"> (Github link to Serial-over-TCP library) </a>.
 
-This library requires a gateway protocol to be run at the same time as the serial connection, so I downloaded it and changed the serial port to the port of my Bluetooth module. (https://github.com/RoanBrand/SerialToTCPBridgeProtocol)
+This library requires a gateway protocol to be run at the same time as the serial connection, so I downloaded it and changed the serial port to the port of my Bluetooth module <a href="https://github.com/RoanBrand/SerialToTCPBridgeProtocol"> (Github link to gateway protocol) </a>.
 
 Next, I configured my Bluetooth module to be able to work with the connection. Using AT mode (Attention mode), I was able to change the settings of the module. I set the default baud rate of the module to 115200 bits/second and reversed the polarity of the module. Once these steps were completed, I uploaded the library example code to the Arduino and modified it to connect to the adafruit.io server. After this, the Arduino uploaded basic test data to an Adafruit feed while the gateway protocol was running on my computer (through the terminal).
 
@@ -29,11 +34,6 @@ My next steps will be to find a way to publish my data in a way that keeps the c
 **Dashboard**
 
 ![Headstone Image](dashboard.png)
-
-# Demo Night Presentation
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qDN0AT_V9gY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 
 # Third Milestone
 
@@ -256,19 +256,19 @@ void setup() {
 # References
 Here are the websites where I learned to use the components and code needed for this project:
 
-https://lastminuteengineers.com/flex-sensor-arduino-tutorial/
+<a href="https://lastminuteengineers.com/flex-sensor-arduino-tutorial/"> https://lastminuteengineers.com/flex-sensor-arduino-tutorial/ </a>
 
-https://www.instructables.com/How-to-Connect-HC-05-to-Windows-1011-Mac-Apple-Com/
+<a href="https://www.instructables.com/How-to-Connect-HC-05-to-Windows-1011-Mac-Apple-Com/"> https://www.instructables.com/How-to-Connect-HC-05-to-Windows-1011-Mac-Apple-Com/ </a>
 
-http://www.ardumotive.com/how-to-use-a-buzzer-en.html 
+<a href="http://www.ardumotive.com/how-to-use-a-buzzer-en.html"> http://www.ardumotive.com/how-to-use-a-buzzer-en.html </a>
 
-https://lastminuteengineers.com/mpu6050-accel-gyro-arduino-tutorial/ 
+<a href="https://lastminuteengineers.com/mpu6050-accel-gyro-arduino-tutorial/"> https://lastminuteengineers.com/mpu6050-accel-gyro-arduino-tutorial/ </a>
 
-https://github.com/RoanBrand/ArduinoSerialToTCPBridgeClient 
+<a href="https://github.com/RoanBrand/ArduinoSerialToTCPBridgeClient"> https://github.com/RoanBrand/ArduinoSerialToTCPBridgeClient </a>
 
-https://www.circuitbasics.com/arduino-ohm-meter/ 
+<a href="https://www.circuitbasics.com/arduino-ohm-meter/"> https://www.circuitbasics.com/arduino-ohm-meter/ </a>
 
-https://www.youtube.com/watch?v=FkltX97YO4Y 
+<a href="https://www.youtube.com/watch?v=FkltX97YO4Y"> https://www.youtube.com/watch?v=FkltX97YO4Y </a>
 
 
 <!--Other Resources/Examples
